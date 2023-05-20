@@ -28,3 +28,23 @@ public class Solution {
         return false;
     }
 }
+
+//Approach 2: better space complexity as No extra data Structure is being used and simply I am coding it as a slow and a fast pointer 
+
+import java.util.HashSet;
+
+public class Solution {
+    public boolean hasCycle(ListNode head) {
+        if(head == null) return false;
+    ListNode fast = head;
+    ListNode slow = head;
+        
+    while(fast.next != null && fast.next.next != null) {
+        fast = fast.next.next;
+        slow = slow.next;
+        if(fast == slow) return true;
+    }
+    return false;
+    }
+}
+
