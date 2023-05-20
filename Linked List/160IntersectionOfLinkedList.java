@@ -9,6 +9,9 @@
  *     }
  * }
  */
+
+//Approach 1: Using 2 loops
+
 public class Solution {
     public ListNode getIntersectionNode(ListNode head1, ListNode head2) {
         while(head2 != null) {
@@ -22,5 +25,23 @@ public class Solution {
     }
     //intersection is not present between the lists return null
     return null;
+    }
+}
+
+//APPROACH 2: Using HashSet or Hashing in General 
+
+public class Solution {
+    public ListNode getIntersectionNode(ListNode head1, ListNode head2) {
+        HashSet<ListNode> st = new HashSet<>();
+        while (head1 != null) {
+            st.add(head1);
+            head1 = head1.next;
+        }
+        while (head2 != null) {
+            if (st.contains(head2))
+                return head2;
+            head2 = head2.next;
+        }
+        return null;
     }
 }
