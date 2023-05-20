@@ -45,3 +45,6 @@ public class Solution {
         return null;
     }
 }
+
+//There are 2 more methods in difference of length and optimised, can go through and implement it completely in the next iteration 
+//https://takeuforward.org/data-structure/find-intersection-of-two-linked-lists/
